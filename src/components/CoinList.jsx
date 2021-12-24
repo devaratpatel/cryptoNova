@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import coinGecko from '../apis/coinGecko';
+import { WatchListContext } from '../context/watchListContext';
 
 function CoinList() {
   const [coins, setCoins] = useState([]);
+  const { watchList } = useContext(WatchListContext);
+  console.log('watchList---->', watchList);
   useEffect(() => {
     const fetchData = async () => {
       const response = await coinGecko.get('/coins/markets', {
         params: {
           vs_currency: 'usd',
-          ids: 'bitcoin, ethereum',
+          ids: watchList.join(', '),
         },
       });
-      console.log('---->', response.data);
+      console.log('response.data -->', response.data);
     };
     fetchData();
   }, []);
