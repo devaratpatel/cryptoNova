@@ -1,9 +1,12 @@
 import React from 'react';
+import AddCoin from '../components/AddCoin';
+import CoinList from '../components/CoinList';
 
 function CoinSummary() {
   return (
     <div>
-      <h5>Coin Summary</h5>
+      <AddCoin />
+      <CoinList />
     </div>
   );
 }
