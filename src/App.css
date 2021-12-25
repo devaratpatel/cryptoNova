@@ -32,7 +32,7 @@ ul {
 .delete-icon {
   display: none;
   position: absolute;
-  right: 6px;
+  right: -3px;
 }
 
 .coin:hover .delete-icon {
