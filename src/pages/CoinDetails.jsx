@@ -7,9 +7,11 @@ import coinGecko from '../apis/coinGecko';
 const CoinDetails = () => {
   const { id } = useParams();
   const [coinData, setCoinData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const [day, week, month, year, detail] = await Promise.all([
         coinGecko.get(`/coins/${id}/market_chart`, {
           params: {
@@ -49,17 +51,19 @@ const CoinDetails = () => {
         year: year.data.prices,
         detail: detail.data[0],
       });
+      setIsLoading(false);
     };
     fetchData();
   }, []);
 
   const renderData = () => {
-    return (
-      <div className="coinlist">
-        <HistoryChart />
-        <CoinData />
-      </div>
-    );
+    if (isLoading) {
+      <div>Loading...</div>;
+    }
+    <div className="coinlist">
+      <HistoryChart />
+      <CoinData />
+    </div>;
   };
 
   return renderData();
