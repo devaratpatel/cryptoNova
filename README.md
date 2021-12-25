@@ -1,7 +1,7 @@
-`Deployment`
+### `Deployment`
 Open: [https://crypto-nova.herokuapp.com/]
 
-`npm start`
+### `npm start`
 Runs the app in the development mode.
 
 Install packages: npm install
