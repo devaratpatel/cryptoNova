@@ -21,7 +21,11 @@ function CoinList() {
       console.log('response.data -->', response.data);
       setIsLoading(false);
     };
-    fetchData();
+    if (watchList.length > 0) {
+      fetchData();
+    } else {
+      setCoins([]);
+    }
   }, [watchList]);
 
   const renderCoins = () => {
