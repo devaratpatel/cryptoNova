@@ -58,12 +58,15 @@ const CoinDetails = () => {
 
   const renderData = () => {
     if (isLoading) {
-      <div>Loading...</div>;
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="coinlist">
+          <HistoryChart />
+          <CoinData />
+        </div>
+      );
     }
-    <div className="coinlist">
-      <HistoryChart />
-      <CoinData />
-    </div>;
   };
 
   return renderData();

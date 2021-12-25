@@ -40,7 +40,7 @@ function CoinList() {
       </ul>
     );
   };
-  return <div>{renderCoins()}</div>;
+  return renderCoins();
 }
 
 export default CoinList;

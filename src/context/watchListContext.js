@@ -4,7 +4,13 @@ import { createContext, useState } from 'react';
 export const WatchListContext = createContext();
 
 export const WatchListContextProvider = props => {
-  const [watchList, setWatchList] = useState(['bitcoin', 'ethereum', 'ripple', 'dogecoin']);
+  const [watchList, setWatchList] = useState([
+    'bitcoin',
+    'ethereum',
+    'ripple',
+    'dogecoin',
+    'telcoin',
+  ]);
   console.log('props.children--->', props.children);
 
   const deleteCoin = coin => {
