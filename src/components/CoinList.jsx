@@ -18,7 +18,6 @@ function CoinList() {
         },
       });
       setCoins(response.data);
-      console.log('response.data -->', response.data);
       setIsLoading(false);
     };
     if (watchList.length > 0) {
