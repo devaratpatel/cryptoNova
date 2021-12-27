@@ -29,7 +29,7 @@ function CoinList() {
 
   const renderCoins = () => {
     if (isLoading) {
-      <div>Loading...</div>;
+      <h2>Loading...</h2>;
     }
     return (
       <ul className="coinlist list-group mt-2">

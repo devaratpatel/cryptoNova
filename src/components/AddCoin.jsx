@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { WatchListContext } from '../context/watchListContext';
 
 const AddCoin = () => {
   const [isActive, setIsActive] = useState(false);
+  const { addCoin } = useContext(WatchListContext);
   const availableCoins = [
     'bitcoin',
     'ethereum',
@@ -21,6 +23,11 @@ const AddCoin = () => {
     'polkadot',
     'stellar',
   ];
+
+  const handleClick = coin => {
+    addCoin(coin);
+    setIsActive(false);
+  };
   return (
     <div className="dropdown">
       <button
@@ -32,7 +39,7 @@ const AddCoin = () => {
       </button>
       <div className={isActive ? 'dropdown-menu show' : 'dropdown-menu'}>
         {availableCoins.map(coin => (
-          <a href="#" className="dropdown-item">
+          <a onClick={() => handleClick(coin)} href="#" className="dropdown-item">
             {coin}
           </a>
         ))}
