@@ -2,7 +2,7 @@
 
 
 ### `Deployment`
-Open: https://crypto-nova.herokuapp.com/
+Open: https://crypto-nova.vercel.app/
 
 
 ### `Development`
