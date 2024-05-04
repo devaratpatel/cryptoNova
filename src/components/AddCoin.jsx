@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState } from 'react';
 import { WatchListContext } from '../context/watchListContext';
 
